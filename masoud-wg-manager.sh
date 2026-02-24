@@ -151,8 +151,8 @@ PEER_PUB="$5"
 PEER_ALLOWED="$6"
 PEER_ENDPOINT="$7"
 KEEPALIVE="$8"
-DO_NAT="$9"
-EXT_IF="${10}"
+DO_NAT="${9:-no}"
+EXT_IF="${10:-}"
 
 apt-get update -y
 apt-get install -y wireguard iproute2
@@ -416,4 +416,5 @@ while true; do
     0) exit 0 ;;
     *) echo "${RED}Invalid.${NC}" ;;
   esac
+
 done
